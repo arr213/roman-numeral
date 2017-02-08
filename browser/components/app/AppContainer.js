@@ -1,22 +1,19 @@
 import { connect } from 'react-redux';
-import { loadPuppies } from '../../action-creators';
-import AllPuppies from './AllPuppies';
+import { loadPuppies } from '../../redux/action-creators';
+import App from './App';
 
 const mapStateToProps = function (state) {
   return {
-    puppies: state.allPuppies
+    inputType: state.inputType
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    onLoadPuppies: function () {
-      const thunk = loadPuppies();
-      dispatch(thunk);
-    }
+    
   };
 };
 
 const componentCreator = connect(mapStateToProps, mapDispatchToProps);
-const AllPuppiesContainer = componentCreator(AllPuppies);
-export default AllPuppiesContainer;
+const AppContainer = componentCreator(App);
+export default AppContainer;

@@ -6,17 +6,16 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        {
-          this.props.puppies.map(puppy => {
-            return (
-              <ul key={puppy.id} className="list-unstyled">
-                <li>
-                  <Link to={"/puppies/" + puppy.id}> { puppy.name }</Link>
-                </li>
-              </ul>
-            )
-          })
-        }
+        <h2>Enter a roman numeral value"</h2>
+        <p>It may only consist of the characters I,V,X,L,C,D,or M.</p>
+        <form>
+          <label>Roman Numeral</label>
+          <input></input>
+        </form>
+        <div>
+          <span>Decimal</span>
+          <span id="decimal">123</span>
+        </div>
       </div>
     );
   }
