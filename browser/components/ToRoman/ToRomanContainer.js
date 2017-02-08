@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import toRoman from './toRoman';
+import toRoman from './ToRoman';
 import { updateDecimal, switchInputType } from '../../redux/action-creators';
 
 const mapStateToProps = function (state) {

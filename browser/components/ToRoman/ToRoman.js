@@ -20,7 +20,6 @@ export default class ToRoman extends Component {
 
   render () {
     let { decimal, convertedRoman } = this.props;
-    // decimal = roman || 'Enter Number';
 
     return (
       <div className="text-left">
