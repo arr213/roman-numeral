@@ -1,5 +1,5 @@
-echo 'This is the .profile. I run whenever the new heroku dino is created.'
+echo 'This is the .profile. I run whenever the new heroku dino is created!'
 
-npm install —dev
+npm install
 
 npm run-build
