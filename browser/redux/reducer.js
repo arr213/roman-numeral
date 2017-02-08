@@ -6,7 +6,7 @@ const defaultState = {
   inputType: 'roman',
   decimal: 1,
   roman: '',
-  convertedDecimal: 0,
+  convertedDecimal: '',
   convertedRoman: 'I'
 }
 
@@ -15,8 +15,11 @@ function reducer(state = defaultState, action) {
   switch (action.type) {
 
     case SWITCH_INPUT_TYPE:
-      if (state.inputType === 'roman') newState.inputType === 'decimal';
-      else newState.inputType === 'roman';
+      if (state.inputType === 'roman') {
+        newState.inputType = 'decimal';
+      } else {
+        newState.inputType = 'roman';
+      }
       break;
 
     case UPDATE_DECIMAL:

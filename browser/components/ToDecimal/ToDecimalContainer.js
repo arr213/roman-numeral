@@ -1,13 +1,22 @@
 import { connect } from 'react-redux';
+
 import ToDecimal from './ToDecimal';
-// import {  } from '../../action-creators';
+import { updateRoman, switchInputType } from '../../redux/action-creators';
 
 const mapStateToProps = function (state) {
-  return {};
+  const { roman, convertedDecimal } = state;
+  return { roman, convertedDecimal };
 };
 
-const mapDispatchToProps = function (dispatch, ownProps) {
-  return {};
+const mapDispatchToProps = function (dispatch) {
+  return {
+    updateRoman (str) {
+      dispatch(updateRoman(str));
+    },
+    switchInputType () {
+      dispatch(switchInputType());
+    }
+  };
 };
 
 const componentCreator = connect(mapStateToProps, mapDispatchToProps);

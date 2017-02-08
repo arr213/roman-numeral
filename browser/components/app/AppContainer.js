@@ -3,15 +3,12 @@ import { loadPuppies } from '../../redux/action-creators';
 import App from './App';
 
 const mapStateToProps = function (state) {
-  return {
-    inputType: state.inputType
-  };
+  let { inputType } = state;
+  return { inputType };
 };
 
 const mapDispatchToProps = function (dispatch) {
-  return {
-    
-  };
+  return {};
 };
 
 const componentCreator = connect(mapStateToProps, mapDispatchToProps);
