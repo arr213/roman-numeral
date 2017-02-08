@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+
+import ToDecimalContainer from '../ToDecimal/ToDecimalContainer';
+
+
 
 export default class App extends Component {
 
   render () {
     return (
       <div>
-        <h2>Enter a roman numeral value"</h2>
-        <p>It may only consist of the characters I,V,X,L,C,D,or M.</p>
-        <form>
-          <label>Roman Numeral</label>
-          <input></input>
-        </form>
-        <div>
-          <span>Decimal</span>
-          <span id="decimal">123</span>
+        <div id="header" className="text-center">
+          <h1>ROMAN NUMERAL TRANSLATOR</h1>
+        </div>
+        <div id="main" className="col-md-6 col-md-offset-3 text-center">
+          <ToDecimalContainer />
         </div>
       </div>
     );
