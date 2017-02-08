@@ -2,20 +2,42 @@ import React, { Component } from 'react';
 
 export default class ToRoman extends Component {
 
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSwap = this.handleSwap.bind(this);
+  }
+
+  handleChange(evt) {
+    let num = evt.target.value;
+    this.props.updateDecimal(num);
+  }
+
+  handleSwap (evt) {
+    evt.preventDefault();
+    this.props.switchInputType();
+  }
+
   render () {
+    let { decimal, convertedRoman } = this.props;
+    // decimal = roman || 'Enter Number';
+
     return (
-      <div>
-        <h3>Enter a roman numeral value:</h3>
-        <p>It may only consist of the characters I,V,X,L,C,D,or M.</p>
-        <form>
-          <label>Roman Numeral</label>
-          <input></input>
-          <button type="submit">Submit</button>
-        </form>
-        <div className="output">
-          <h3>Decimal</h3>
-          <p id="decimal">123</p>
+      <div className="text-left">
+        <div className="col-md-6 numeral-container">
+          <form>
+            <h3>Decimal:</h3>
+            <button className="swap" onClick={this.handleSwap}>
+              <span className="glyphicon glyphicon-retweet"></span>
+            </button>
+            <input name="decimal" type="text" placeholder="Enter number" onChange={this.handleChange}></input>
+          </form>
         </div>
+        <div className="col-md-6 numeral-container left-border">
+          <h3>Roman Numeral:</h3>
+          <p className="converted">{convertedRoman}</p>
+        </div>
+        
       </div>
     )
   }

@@ -9,8 +9,7 @@ export default class ToDecimal extends Component {
   }
 
   handleChange(evt) {
-    console.log(evt.target.value);
-    const romanStr = evt.target.value;
+    let romanStr = evt.target.value;
     this.props.updateRoman(romanStr);
   }
 
@@ -21,7 +20,6 @@ export default class ToDecimal extends Component {
 
   render () {
     let { roman, convertedDecimal } = this.props;
-    roman = roman || 'Enter Numeral';
     
     return (
       <div className="text-left">

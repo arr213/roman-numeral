@@ -4,10 +4,10 @@ import decimalToRoman from '../utilities/decimalToRoman';
 
 const defaultState = {
   inputType: 'roman',
-  decimal: 1,
+  decimal: '',
   roman: '',
   convertedDecimal: '',
-  convertedRoman: 'I'
+  convertedRoman: ''
 }
 
 function reducer(state = defaultState, action) {
@@ -15,11 +15,11 @@ function reducer(state = defaultState, action) {
   switch (action.type) {
 
     case SWITCH_INPUT_TYPE:
-      if (state.inputType === 'roman') {
-        newState.inputType = 'decimal';
-      } else {
-        newState.inputType = 'roman';
-      }
+      newState.convertedRoman = '';
+      newState.convertedDecimal = '';
+      state.inputType === 'roman' ?
+        newState.inputType = 'decimal'
+        : newState.inputType = 'roman';
       break;
 
     case UPDATE_DECIMAL:

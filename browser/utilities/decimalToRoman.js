@@ -1,14 +1,13 @@
 export default function decimalToRoman(num){
   
   // Edge cases: Input must be an integer less than 4,000.
-  if (typeof num !== 'number'){
-    throw new Error("Input must be a number.");
-  }
+  num = +num;
+
   if (!Number.isInteger(num) || num < 0){
-    throw new Error("Input must be a positive integer.");    
+    return 'N/A';    
   }
   if (num > 4000) {
-    throw new Error("Input cannot be larger than 4,000");
+    return 'N/A';
   }
   if (num === 0 || num === '') return '';
   
@@ -21,7 +20,6 @@ export default function decimalToRoman(num){
   
 
   // Iterate through the decimal array from largest value to smallest.
-  // If 
   for (let i = decimalList.length - 1; i >= 0; i--){
     
     while(num >= decimalList[i]) {
@@ -47,5 +45,5 @@ export default function decimalToRoman(num){
     
   }
   
-  return str;
+  return romanString;
 }

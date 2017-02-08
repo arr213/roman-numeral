@@ -2,7 +2,7 @@ export default function romanToDecimal(romanString) {
   
   // Edge case: input must be string.
   if (typeof romanString !== 'string') {
-    throw Error("Roman numeral must be of type string.");
+    return 'N/A';
   }
   if (romanString === '') {
     return 0;
@@ -32,7 +32,7 @@ export default function romanToDecimal(romanString) {
     let currLetter = romanString[i];
     
     if (!letterOptions.includes(currLetter)) {
-      throw Error("Roman numeral can only consist of letters including I,V,X,L,C,D,M");
+      return 'N/A'
     }
     
     numbersArray.push( symbolsHash[currLetter] )
