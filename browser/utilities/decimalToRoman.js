@@ -27,7 +27,7 @@ export default function decimalToRoman(num){
       num -= decimalList[i];
     }
     
-    if (i & 2 === 1){
+    if (i % 2 === 1){
       if (num >= decimalList[i] - decimalList[i-1]){
         romanString += romanList[i-1];
         romanString += romanList[i];

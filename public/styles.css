@@ -50,9 +50,11 @@ p.converted {
   height: 150px;
 }
 
-.left-border {
-  padding-left: 20px;
-  border-left: 1px solid lightgrey;
+@media (min-width: 990px) {
+  .left-border {
+    padding-left: 20px;
+    border-left: 1px solid lightgrey;
+  }
 }
 
 button.swap {
